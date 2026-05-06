@@ -4094,7 +4094,7 @@ private class SOQL_Test {
 		// Test
 		Set<String> accountNames = SOQL.of(Account.SObjectType)
 			.whereAre(SOQL.Filter.name().equal('Test'))
-			.toValuesOf('Parent', Account.Name);
+			.toValuesOf('Parent', Account.Id);
 
 		// Verify
 		Assert.isTrue(accountNames.isEmpty(), 'The account names set should be empty, because the related record does not exist.');
